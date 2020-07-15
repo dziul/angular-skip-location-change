@@ -1,3 +1,5 @@
+https://dziul.github.io/angular-skip-location-change/
+
 #### Propósito
 
 Roteamento sem alterar url do navegador.
