@@ -1,0 +1,16 @@
+<div *ngFor="let button of buttons" class="button-content">
+  <button
+    type="button"
+    mat-raised-button
+    [routerLink]="button.path"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [disabled]="rla.isActive"
+    color="primary"
+    skipLocationChange="true"
+  >
+    {{ button.text }}
+  </button>
+</div>
+
+<router-outlet></router-outlet>
