@@ -47,12 +47,17 @@ export class AppComponent implements OnInit {
           }
         }),
         filter((event) => event instanceof NavigationEnd),
-        map(() => {
+        map((event) => {
           let route = this.activatedRoute;
+          const rootData = (route.firstChild && route.firstChild.snapshot.data) || {};
+
           while (route.firstChild) {
             route = route.firstChild;
           }
-          return route.snapshot.data;
+          const childData = route.snapshot.data;
+
+          console.log(rootData, childData);
+          return childData;
         })
       )
       .subscribe(console.log);
