@@ -26,6 +26,8 @@ Roteamento sem alterar url do navegador.
 
 - [Desativar alterações de URL com roteamento](https://stackoverflow.com/questions/53196790/how-to-disable-url-changes-with-angular-routing)
 
+- [loading indicator](https://www.amadousall.com/angular-routing-how-to-display-a-loading-indicator-when-navigating-between-routes/)
+
 # AngularSkipLocationChange
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.28.
