@@ -40,21 +40,20 @@ export class AppComponent implements OnInit {
         tap((event) => {
           if (event instanceof NavigationStart) {
             this.loading = true;
+          } else if (
+            [NavigationEnd, NavigationCancel, NavigationError].some((i) => event instanceof i)
+          ) {
+            this.loading = false;
           }
         }),
-        filter((event) => {
-          return [NavigationEnd, NavigationCancel, NavigationError].some((i) => event instanceof i);
-        }),
+        filter((event) => event instanceof NavigationEnd),
         map(() => {
           let route = this.activatedRoute;
           while (route.firstChild) {
             route = route.firstChild;
           }
-
-          this.loading = false;
-          return route;
-        }),
-        mergeMap((route) => route.data)
+          return route.snapshot.data;
+        })
       )
       .subscribe(console.log);
   }

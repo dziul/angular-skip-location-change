@@ -6,7 +6,7 @@ import { AnythingComponent } from './anything/anything.component';
 const routes: Routes = [
   {
     path: 'first',
-    data: { name: 'ok' },
+    data: { name: 'first root' },
     loadChildren: () => import('./first/first.module').then((m) => m.FirstModule),
   },
   {

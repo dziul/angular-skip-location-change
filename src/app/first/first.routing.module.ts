@@ -6,6 +6,7 @@ import { FirstComponent } from './first.component';
 const startedRoute: Routes = [
   {
     path: '',
+    data: { name: 'first child' },
     component: FirstComponent,
   },
 ];
