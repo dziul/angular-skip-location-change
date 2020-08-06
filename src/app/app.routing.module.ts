@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AnythingComponent } from './anything/anything.component';
+import { ModalExitComponent } from './modal-exit/modal-exit.component';
 
 const routes: Routes = [
   {
@@ -19,14 +19,13 @@ const routes: Routes = [
     data: { is: false },
     loadChildren: () => import('./anything/anything.module').then((m) => m.AnythingModule),
   },
-  // {
-  //   path: '',
-  //   component: AnythingComponent, // para default, usar prop 'component'
-  // },
-  // {
-  //   path: '**',
-  //   redirectTo: '',
-  // },
+  {
+    path: 'modal-exit',
+    component: ModalExitComponent,
+    data: { left: true },
+    outlet: 'modal',
+  },
+  // { path: '',   redirectTo: '/first', pathMatch: 'full' }
 ];
 
 @NgModule({

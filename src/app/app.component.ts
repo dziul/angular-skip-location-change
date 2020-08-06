@@ -17,7 +17,7 @@ import {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  buttons: { path: string; text: string }[] = [
+  buttons: { path: string | any[]; text: string }[] = [
     {
       path: 'anything',
       text: 'Anything',
@@ -29,6 +29,10 @@ export class AppComponent implements OnInit {
     {
       path: 'second',
       text: 'Second',
+    },
+    {
+      path: [{ outlets: { modal: 'modal-exit' } }],
+      text: 'Modal',
     },
   ];
   loading = false;
