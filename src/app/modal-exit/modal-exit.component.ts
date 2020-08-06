@@ -20,6 +20,6 @@ export class ModalExitComponent implements OnInit {
     // }
 
     const url = this.router.url.replace(/\(.+\:.+\)/, '');
-    return this.router.navigateByUrl(url);
+    this.router.navigateByUrl(url, { skipLocationChange: true });
   }
 }
